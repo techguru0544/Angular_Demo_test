@@ -1,0 +1,114 @@
+<section class="px-3 py-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="heading">
+                    <h1 class="title">Products <span>({{ this.product_list?.length > 0 ? this.product_list?.length  : 0 }})</span></h1>
+
+                    <div class="right">
+                        <span class="btn btn-primary">
+                            <!-- <span class="iconify" data-icon="fa-solid:user-plus" data-width="20"></span> -->
+                            <span (click)="openProductPopup($event,'')">Add Product</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table m-0 table-borderless table-hover align-middle table-design">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Project ID</th>
+                                        <th scope="col">Project Name</th>
+                                        <th scope="col">Product Price</th>
+                                        <th scope="col" class="text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let product of this.display_list;let i = index;">
+                                        <td><a type="button" class="text-primary px-3" (click)="openProductPopup($event,product)">{{i + 1}}</a></td>
+                                        <td>{{product?.name}}</td>
+                                        <td>{{product?.price}}</td>
+                                        <td class="text-end">
+                                            <!-- <a type="button" class="text-primary pe-0">
+                                                <span class="iconify" data-icon="clarity:eye-show-line"
+                                                    data-width="22"></span>
+                                            </a> -->
+                                            <!-- <a type="button" class="text-primary px-3">
+                                                <span class="iconify" data-icon="clarity:edit-line"
+                                                    data-width="18"></span>
+                                            </a> -->
+                                            <a type="button" class="text-primary px-1 pe-0" (click)="openDeleteModal($event,product)">
+                                                <span class="iconify" data-icon="uiw:delete" data-width="16"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="this.display_list.length === 0">
+                                        <td colspan="4" class="text-center"> No Record Found</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+
+                    <nav class="justify-content-between d-flex">
+                        <ul class="unstyled p-0">
+                            <li [ngClass]="{'disabled':!(this.product_list.length > 0)}">
+                                <div class="btn-group w-100" dropdown  [ngClass]="{'disabled':!(this.product_list.length > 0)}">
+                                    <button id="button-basic"  [ngClass]="{'disabled':!(this.product_list.length > 0)}" dropdownToggle type="button"
+                                        class="btn btn-block btn-drop-menu border m-2  dropdown-toggle"
+                                        aria-controls="dropdown-basic">
+                                        {{this.selectedPageIndex}} item per page<span class="drop-icon iconify"
+                                            data-icon="akar-icons:chevron-down" data-width="18"></span>
+                                    </button>
+                                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu w-100" role="menu"
+                                        aria-labelledby="button-basic">
+                                        <li role="menuitem"><span class="dropdown-item" (click)="loadTable(5)">5 item per page</span></li>
+                                        <li role="menuitem"><span class="dropdown-item" (click)="loadTable(10)">10 item per page</span></li>
+                                        <li role="menuitem"><span class="dropdown-item" (click)="loadTable(15)">15 item per page</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="pagination pagination-design m-0">
+
+                            <li class="page-item" [ngClass]="{'disabled':!(this.currentPage > 1)}" >
+                                <a [routerLink]=""class="page-link"  (click)="goToFirstPage()" >
+                                    <span class="iconify" data-icon="fluent:chevron-double-left-16-regular"
+                                        data-width="20"></span>
+                                </a>
+                            </li>
+                            <li class="page-item"  [ngClass]="{'disabled': !(this.currentPage > 1)}">
+                                <a [routerLink]=""class="page-link"  (click)="previousePage()"> 
+                                    <span class="iconify" data-icon="fluent:chevron-left-48-regular"
+                                        data-width="20"></span>
+                                </a>
+                            </li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" [routerLink]="">{{currentPage}}</a>
+                            </li>
+                            <li class="page-item" [ngClass]="{'disabled': !(this.totalPageSize > this.currentPage)}" >
+                                <a [routerLink]="" (click)="nextPage()" class="page-link">
+                                    <span class="iconify" data-icon="fluent:chevron-right-48-regular"
+                                        data-width="20"></span>
+                                </a>
+                            </li>
+                            <li class="page-item"  [ngClass]="{'disabled': !(this.totalPageSize > this.currentPage)}" >
+                                <a [routerLink]="" class="page-link" (click)="goToLastPage()">
+                                    <span class="iconify" data-icon="fluent:chevron-double-right-16-regular"
+                                        data-width="20"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

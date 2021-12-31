@@ -1,0 +1,6 @@
+<app-sidebar *ngIf="isSidebarVisible" [ngClass]="isSidebarVisible ? 'sidebar-init' : ''"></app-sidebar>
+<main class="main" [ngClass]="isSidebarVisible ? 'wrapper' : ''" role="main">
+    <app-header (toggleSideBar)="toggleSidebar()"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</main>

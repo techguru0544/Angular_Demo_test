@@ -1,0 +1,31 @@
+<div class="modal-content">
+    <div class="modal-header border-bottom">
+        <h5 class="modal-title">Add New Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="this.activeModal.close(false)"></button>
+    </div>
+    <form [formGroup]="productForm">
+        <div class="modal-body p-5 pb-0">
+            <div class="form-group mb-4">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name"  formControlName="name" class="form-control" placeholder="Enter Product Name">
+                <span class="text-danger"
+                *ngIf="productForm?.controls['name'].touched && (productForm?.controls['name'].errors?.['required'])">
+                *Product name is required
+            </span>
+            </div>
+            <div class="form-group mb-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" id="price"  formControlName="price" name="price" min="0" class="form-control" placeholder="Enter Product Price">
+                <span class="text-danger"
+                *ngIf="productForm?.controls['price'].touched && (productForm?.controls['price'].errors?.['required'])">
+                *Product price is required
+            </span>
+            </div>
+        </div>
+        <div class="modal-footer px-5 pb-5">
+            <button type="button" [disabled]="!productForm.valid" (click)="addUpdateProduct()" class="btn btn-primary">
+                {{ isEdit ? 'Update' : 'Create' }}    
+            </button>
+        </div>
+    </form>
+</div>

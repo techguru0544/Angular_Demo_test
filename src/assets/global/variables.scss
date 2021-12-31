@@ -1,0 +1,72 @@
+// Overriding defaults
+$enable-shadows: true;
+$link-decoration: none;
+
+// Colors
+$body-bg: #f5f6fa;
+
+$primary: #0ea183;
+$dark: #4d4d4d;
+$white: #fff;
+
+// Box shadow
+
+$box-shadow-md: 0px 2px 6px rgba(0, 0, 0, 0.2);
+$box-shadow-popup: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+// Modal
+$modal-fade-transform: scale(0.5);
+$modal-show-transform: none;
+$modal-transition: transform 0.2s ease-out;
+$modal-scale-transform: scale(1.02);
+$modal-content-box-shadow-sm-up: $box-shadow-popup;
+$modal-backdrop-bg: transparentize($dark, 0.1);
+$modal-content-border-width: 0;
+
+// Accordion
+
+// Dropdown
+$dropdown-border-width: 0;
+
+// Button
+$btn-box-shadow: 0;
+$btn-active-box-shadow: 0;
+$btn-focus-box-shadow: 0;
+$btn-focus-width: 0;
+$btn-padding-x: 20px;
+$btn-padding-y: 8px;
+$btn-font-size: 18px;
+
+// Pagination
+$pagination-focus-box-shadow: 0;
+
+// Input
+$input-box-shadow: 0;
+$input-focus-width: 0;
+$input-focus-box-shadow: 0;
+$input-bg: #fcfcfc;
+$input-height: 45px;
+
+// Label
+$form-label-color: #666666;
+$form-label-font-size: 16px;
+
+// Table
+$table-hover-bg: transparentize($primary, 0.95);
+$table-striped-bg: transparentize(#bebebe, 0.85);
+
+// NG Packages
+// select
+$ng-select-highlight: lighten($primary, 25%);
+$ng-select-height: $input-height;
+$ng-select-box-shadow: 0;
+$ng-select-selected: transparentize($primary, 0.8);
+$ng-select-selected-text: $primary;
+
+// DateTimePicker
+$theme-green: $primary;
+
+// Custom
+$logo-width: 160px;
+$navbar-height: 65px;
+$sidebar-width: 280px;

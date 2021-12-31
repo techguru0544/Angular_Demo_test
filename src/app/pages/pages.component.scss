@@ -1,0 +1,13 @@
+@import "./src/assets/global/config";
+.main {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 44px;
+  @include transition(0.2s);
+  &.wrapper {
+    padding-left: $sidebar-width;
+    @media screen and (max-width: 1024px) {
+      padding-left: 0;
+    }
+  }
+}

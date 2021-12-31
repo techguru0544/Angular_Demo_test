@@ -1,0 +1,78 @@
+@import "./src/assets/global/config";
+
+.navbar {
+  background-color: $white;
+  height: $navbar-height;
+  padding-right: 10px;
+  @include box-shadow($box-shadow-sm);
+  .menu-wrapper {
+    width: 100%;
+    @include vspace;
+    .mob-menu {
+      .logo {
+        display: none;
+        width: $logo-width;
+        @media screen and (max-width: 1024px){
+          display: block;
+        }
+        @include media-breakpoint-down(sm) {
+          width: ($logo-width - 50);
+        }
+        img, svg {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .menu {
+      .nav {
+        align-items: center;
+        .nav-item {
+          &:last-child {
+            .nav-link {
+              padding-right: 0;
+            }
+          }
+          .nav-link {
+            color: $dark;
+            cursor: pointer;
+            position: relative;
+            @include vcenter;
+            @include media-breakpoint-down(sm) {
+              padding: 5px 8px;
+            }
+            &:hover {
+              color: $primary;
+            }
+
+            .alert-bell {
+              .dot {
+                position: absolute;
+                top: -2px;
+                right: 5px;
+                color: $primary;
+              }
+            }
+          }
+          .dropdown {
+            .icon {
+              width: 40px;
+              height: 40px;
+              margin-right: 10px;
+            }
+            .dropdown-toggle {
+              padding: 8px 0;
+            }
+            .dropdown-menu {
+              padding: 0;
+              .dropdown-item {
+                padding: 10px 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

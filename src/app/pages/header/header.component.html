@@ -1,0 +1,21 @@
+<nav class="navbar sticky-top">
+    <div class="container-fluid">
+        <div class="menu-wrapper">
+            <div class="mob-menu">
+                <a routerLink="/" class="logo">
+                    <img class="img-fluid" src="./assets/img/logo/logo.png" alt="DemoTest">
+                </a>
+            </div>
+            <div class="menu">
+                <ul class="nav">
+                    <li class="nav-item" *ngIf="isTriggerVisible">
+                        <a class="nav-link" (click)="clickToggle()">
+                            <span class="iconify" data-icon="feather:menu" data-width="25"></span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

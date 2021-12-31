@@ -1,0 +1,41 @@
+<aside class="sidebar">
+    <div class="sidebar-wrapper">
+        <ul class="nav flex-column">
+            <li class="nav-item logo-wrap">
+                <a routerLink="/" class="logo">
+                    <img class="img-fluid" src="./assets/img/logo/logo.png" alt="DemoTest">
+                </a>
+            </li>
+            <li class="nav-item">
+                <div class="btn-group w-100" dropdown>
+                    <button id="button-basic" dropdownToggle type="button"
+                        class="btn btn-block btn-drop-menu border m-2  dropdown-toggle" aria-controls="dropdown-basic">
+                        {{selectedCustomer?.name}} <span class="drop-icon iconify" data-icon="akar-icons:chevron-down"
+                            data-width="18"></span>
+                    </button>
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu w-100" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem" *ngFor="let customer of customer_list" >
+                            <span class="dropdown-item"  (click)="changeUser(customer)">{{customer.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="customer-details" routerLinkActive="active">
+                    <span class="iconify" data-icon="ant-design:user-outlined" data-width="25"></span>
+                    <span>Customer Info</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="projects" routerLinkActive="active">
+                    <span class="iconify" data-icon="octicon:project-24" data-width="25"></span>
+                    <span>Product Detail</span>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+</aside>

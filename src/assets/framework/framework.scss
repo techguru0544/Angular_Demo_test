@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+// Variables & Globals Override and Import
+@import "../global/variables";
+@import "../global/mixins";
+
+// Framework import
+@import "~bootstrap/scss/bootstrap";
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";

@@ -1,0 +1,19 @@
+table.table-design {
+  thead {
+    th {
+      border-bottom: $border-width solid $border-color;
+      padding: 10px 20px;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+  }
+  tbody {
+    td {
+      border-bottom: $border-width solid lighten($border-color, 5%);
+      color: $gray-600;
+      font-size: 16px;
+      padding: 15px 20px;
+      white-space: nowrap;
+    }
+  }
+}
